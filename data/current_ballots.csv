@@ -1,6 +1,40 @@
-role,voter,pref1,pref2,pref3
-President,001,Lachlan Steenson,Alex Smith,Jamie Brown
-President,002,Alex Smith,Lachlan Steenson,Jamie Brown
-President,003,Jamie Brown,Lachlan Steenson,Alex Smith
-Vice President,001,Mia Jones,Sam Lee
-Vice President,002,Sam Lee,Mia Jones
+role,voter,pref1,pref2,pref3,pref4,pref5
+President,001,Lachlan Steenson,Alex Smith,Jamie Brown,Mia Jones,Sam Lee
+President,002,Alex Smith,Lachlan Steenson,Jamie Brown,Mia Jones,Sam Lee
+President,003,Lachlan Steenson,Jamie Brown,Alex Smith,Sam Lee,Mia Jones
+President,004,Jamie Brown,Lachlan Steenson,Alex Smith,Sam Lee,Mia Jones
+President,005,Alex Smith,Jamie Brown,Lachlan Steenson,Mia Jones,Sam Lee
+President,006,Lachlan Steenson,Alex Smith,Jamie Brown,Mia Jones,Sam Lee
+
+Vice President,001,Mia Jones,Lachlan Steenson,Alex Smith,Jamie Brown,Sam Lee
+Vice President,002,Lachlan Steenson,Mia Jones,Alex Smith,Jamie Brown,Sam Lee
+Vice President,003,Alex Smith,Mia Jones,Lachlan Steenson,Jamie Brown,Sam Lee
+Vice President,004,Mia Jones,Alex Smith,Lachlan Steenson,Jamie Brown,Sam Lee
+Vice President,005,Lachlan Steenson,Alex Smith,Mia Jones,Jamie Brown,Sam Lee
+
+Secretary,001,Alex Smith,Lachlan Steenson,Jamie Brown,Mia Jones,Sam Lee
+Secretary,002,Lachlan Steenson,Alex Smith,Jamie Brown,Mia Jones,Sam Lee
+Secretary,003,Jamie Brown,Alex Smith,Lachlan Steenson,Mia Jones,Sam Lee
+Secretary,004,Alex Smith,Jamie Brown,Lachlan Steenson,Mia Jones,Sam Lee
+
+Treasurer,001,Sam Lee,Lachlan Steenson,Alex Smith,Jamie Brown,Mia Jones
+Treasurer,002,Lachlan Steenson,Sam Lee,Alex Smith,Jamie Brown,Mia Jones
+Treasurer,003,Alex Smith,Sam Lee,Lachlan Steenson,Jamie Brown,Mia Jones
+
+Events Officer,001,Taylor Wilson,Jordan Patel,Casey Nguyen,Lachlan Steenson,Alex Smith
+Events Officer,002,Jordan Patel,Taylor Wilson,Casey Nguyen,Lachlan Steenson,Alex Smith
+Events Officer,003,Casey Nguyen,Taylor Wilson,Jordan Patel,Lachlan Steenson,Alex Smith
+
+Media Officer,001,Morgan Davis,Mia Jones,Lachlan Steenson,Alex Smith,Jamie Brown
+Media Officer,002,Mia Jones,Morgan Davis,Lachlan Steenson,Alex Smith,Jamie Brown
+Media Officer,003,Lachlan Steenson,Mia Jones,Morgan Davis,Alex Smith,Jamie Brown
+
+Policy Officer,001,Jamie Brown,Lachlan Steenson,Alex Smith,Sam Lee,Mia Jones
+Policy Officer,002,Lachlan Steenson,Jamie Brown,Alex Smith,Sam Lee,Mia Jones
+Policy Officer,003,Alex Smith,Jamie Brown,Lachlan Steenson,Sam Lee,Mia Jones
+
+Research Officer,001,Casey Nguyen,Taylor Wilson,Jordan Patel,Lachlan Steenson,Alex Smith
+Research Officer,002,Taylor Wilson,Casey Nguyen,Jordan Patel,Lachlan Steenson,Alex Smith
+
+Membership Officer,001,Sam Lee,Lachlan Steenson,Alex Smith,Jamie Brown,Mia Jones
+Membership Officer,002,Lachlan Steenson,Sam Lee,Alex Smith,Jamie Brown,Mia Jones
