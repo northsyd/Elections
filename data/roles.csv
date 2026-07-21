@@ -1,0 +1,10 @@
+role,order,incumbent_exists
+President,1,TRUE
+Vice President,2,TRUE
+Secretary,3,TRUE
+Treasurer,4,TRUE
+Transit Club Liaison,5,TRUE
+Archivist,6,TRUE
+Marketing/Communications Officer,7,FALSE
+Events Officer,8,FALSE
+Membership Officer,9,FALSE
