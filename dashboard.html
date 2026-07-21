@@ -7,6 +7,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3"></script>
+
+
 <style>
 
 body {
@@ -69,7 +73,7 @@ select {
 .badge {
 
     background:#16a34a;
-    padding:10px 20px;
+    padding:12px 20px;
     border-radius:20px;
     font-weight:bold;
 
@@ -88,8 +92,8 @@ canvas {
 .twoPP {
 
     display:flex;
-    height:50px;
-    border-radius:25px;
+    height:55px;
+    border-radius:30px;
     overflow:hidden;
 
 }
@@ -107,10 +111,10 @@ canvas {
 
 
 
-.flow {
+#sankey {
 
-    font-size:20px;
-    line-height:2;
+    width:100%;
+    height:500px;
 
 }
 
@@ -144,8 +148,8 @@ canvas {
 }
 
 
-</style>
 
+</style>
 
 </head>
 
@@ -154,8 +158,8 @@ canvas {
 <body>
 
 
-
 <h1>NSTA Election Centre</h1>
+
 
 
 <select id="roleSelect"></select>
@@ -163,31 +167,37 @@ canvas {
 
 
 
+
 <div class="card">
+
 
 <div class="result">
 
-<div>
 
 <div>
+
+<div class="badge">
 ELECTED
 </div>
 
+
 <div class="winner" id="winner">
-
-</div>
-
-</div>
-
-
-<div class="badge" id="role">
-
 </div>
 
 
 </div>
 
+
+<div id="role">
+
 </div>
+
+
+</div>
+
+
+</div>
+
 
 
 
@@ -205,18 +215,21 @@ ELECTED
 
 
 
+
 <div class="card">
 
 <h2>Two Candidate Preferred</h2>
 
-<div class="twoPP" id="twopp">
 
-</div>
+<div class="twoPP" id="twopp"></div>
 
 
 <p id="margin"></p>
 
+
 </div>
+
+
 
 
 
@@ -226,7 +239,9 @@ ELECTED
 
 <h2>First Preference Swing</h2>
 
+
 <canvas id="swingChart"></canvas>
+
 
 </div>
 
@@ -239,11 +254,12 @@ ELECTED
 
 <h2>Preference Flow</h2>
 
-<div class="flow" id="flows">
+
+<svg id="sankey"></svg>
+
 
 </div>
 
-</div>
 
 
 
@@ -252,13 +268,16 @@ ELECTED
 
 <div class="card">
 
+
 <h2>Committee</h2>
 
-<div class="parliament" id="committee">
+
+<div class="parliament" id="committee"></div>
+
 
 </div>
 
-</div>
+
 
 
 
@@ -279,7 +298,9 @@ let swingChart;
 
 fetch("results.json")
 
+
 .then(r=>r.json())
+
 
 .then(data=>{
 
@@ -287,30 +308,33 @@ fetch("results.json")
 results=data;
 
 
-let select =
+let selector =
 document.getElementById("roleSelect");
+
 
 
 Object.keys(results).forEach(role=>{
 
 
-let option=document.createElement("option");
+let option =
+document.createElement("option");
+
 
 option.value=role;
 
 option.textContent=role;
 
 
-select.appendChild(option);
+selector.appendChild(option);
 
 
 });
 
 
 
-select.onchange=()=>{
+selector.onchange=()=>{
 
-showRole(select.value);
+showRole(selector.value);
 
 };
 
@@ -330,10 +354,14 @@ Object.keys(results)[0]
 
 
 
+
+
 function showRole(role){
 
 
-let data=results[role];
+
+let data =
+results[role];
 
 
 
@@ -348,10 +376,8 @@ role;
 
 
 
-
 if(firstChart)
 firstChart.destroy();
-
 
 
 if(swingChart)
@@ -362,7 +388,10 @@ swingChart.destroy();
 
 
 
+
+//
 // FIRST PREFS
+//
 
 
 let names =
@@ -370,23 +399,31 @@ Object.keys(data.first_percent);
 
 
 
-firstChart=new Chart(
+firstChart = new Chart(
 
 document.getElementById("firstChart"),
 
 {
 
+
 type:"bar",
+
 
 data:{
 
+
 labels:names,
+
 
 datasets:[{
 
+
 label:"First Preference %",
 
+
 data:Object.values(data.first_percent),
+
+
 
 backgroundColor:names.map(
 
@@ -394,9 +431,11 @@ n=>data.candidates[n]?.colour || "#64748b"
 
 )
 
+
 }]
 
 },
+
 
 options:{
 
@@ -405,6 +444,7 @@ scales:{
 y:{
 
 beginAtZero:true,
+
 max:100
 
 }
@@ -413,7 +453,9 @@ max:100
 
 }
 
+
 }
+
 
 );
 
@@ -423,26 +465,36 @@ max:100
 
 
 
+
+//
 // SWING
+//
 
 
-swingChart=new Chart(
+swingChart = new Chart(
 
 document.getElementById("swingChart"),
 
 {
 
+
 type:"bar",
+
 
 data:{
 
+
 labels:Object.keys(data.swing),
+
 
 datasets:[{
 
-label:"Swing",
+
+label:"Swing %",
+
 
 data:Object.values(data.swing),
+
 
 backgroundColor:Object.keys(data.swing).map(
 
@@ -450,11 +502,14 @@ n=>data.candidates[n]?.colour || "#64748b"
 
 )
 
+
 }]
 
 }
 
+
 }
+
 
 );
 
@@ -466,7 +521,9 @@ n=>data.candidates[n]?.colour || "#64748b"
 
 
 
+//
 // 2PP
+//
 
 
 let finalNames =
@@ -475,6 +532,7 @@ Object.keys(data.final_count);
 
 let finalVotes =
 Object.values(data.final_count);
+
 
 
 let total =
@@ -492,81 +550,180 @@ box.innerHTML="";
 
 
 
-finalNames.forEach(name=>{
+finalNames.forEach((name,index)=>{
 
 
-let width =
-(finalVotes[finalNames.indexOf(name)]
-/total)*100;
+let percent =
+finalVotes[index]/total*100;
 
 
 
-let div=document.createElement("div");
+let div =
+document.createElement("div");
 
 
 div.className="side";
 
-div.style.width=width+"%";
+
+div.style.width =
+percent+"%";
+
 
 div.style.background =
 data.candidates[name]?.colour || "#64748b";
 
 
 div.innerHTML =
-name+" "+width.toFixed(1)+"%";
+name+" "+percent.toFixed(1)+"%";
+
 
 
 box.appendChild(div);
 
 
+
 });
 
 
 
-let margin =
-Math.abs(
 
+document.getElementById("margin").innerHTML =
+
+"Margin: "+
+Math.abs(
 (finalVotes[0]-finalVotes[1])
 /total*100
+).toFixed(1)
++"%";
+
+
+
+
+
+
+
+
+
+//
+// SANKEY
+//
+
+drawSankey(data);
+
+
+
+
+
+
+
+
+//
+// COMMITTEE
+//
+
+drawCommittee();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+function drawSankey(data){
+
+
+
+let svg =
+d3.select("#sankey");
+
+
+
+svg.selectAll("*").remove();
+
+
+
+if(!data.flows.length){
+
+return;
+
+}
+
+
+
+let names = [
+
+...new Set(
+
+data.flows.flatMap(
+
+f=>[f.from,f.to]
+
+)
+
+)
+
+];
+
+
+
+
+let nodes =
+names.map(
+name=>({name:name})
+);
+
+
+
+
+let links =
+data.flows.map(
+f=>({
+
+source:names.indexOf(f.from),
+
+target:names.indexOf(f.to),
+
+value:f.votes
+
+})
 
 );
 
 
 
-document.getElementById("margin").innerHTML =
-"Margin: "+margin.toFixed(1)+"%";
+
+
+let sankey =
+d3.sankey()
+
+.nodeWidth(25)
+
+.nodePadding(30)
+
+.extent(
+
+[
+[20,20],
+[900,450]
+]
+
+);
 
 
 
 
+let graph =
+sankey({
 
+nodes:nodes,
 
-
-// FLOWS
-
-
-let flowBox =
-document.getElementById("flows");
-
-
-flowBox.innerHTML="";
-
-
-data.flows.forEach(flow=>{
-
-
-flowBox.innerHTML +=
-
-`
-${flow.from}
-→
-${flow.to}
-
-(${flow.votes} votes)
-
-<br>
-
-`;
+links:links
 
 });
 
@@ -574,57 +731,222 @@ ${flow.to}
 
 
 
+svg.append("g")
+
+.selectAll("path")
+
+.data(graph.links)
+
+.enter()
+
+.append("path")
+
+.attr(
+
+"d",
+
+d3.sankeyLinkHorizontal()
+
+)
+
+.attr(
+
+"stroke",
+
+"#94a3b8"
+
+)
+
+.attr(
+
+"stroke-width",
+
+d=>Math.max(2,d.width)
+
+)
+
+.attr(
+
+"fill",
+
+"none"
+
+)
+
+.attr(
+
+"opacity",
+
+0.6
+
+);
 
 
 
 
-// COMMITTEE
 
 
-let committee =
+let node =
+svg.append("g")
+
+.selectAll("g")
+
+.data(graph.nodes)
+
+.enter()
+
+.append("g");
+
+
+
+
+
+node.append("rect")
+
+.attr(
+
+"x",
+
+d=>d.x0
+
+)
+
+.attr(
+
+"y",
+
+d=>d.y0
+
+)
+
+.attr(
+
+"width",
+
+d=>d.x1-d.x0
+
+)
+
+.attr(
+
+"height",
+
+d=>d.y1-d.y0
+
+)
+
+.attr(
+
+"fill",
+
+d=>data.candidates[d.name]?.colour || "#64748b"
+
+);
+
+
+
+
+
+node.append("text")
+
+.attr(
+
+"x",
+
+d=>d.x0-6
+
+)
+
+.attr(
+
+"y",
+
+d=>(d.y0+d.y1)/2
+
+)
+
+.attr(
+
+"text-anchor",
+
+"end"
+
+)
+
+.text(
+
+d=>d.name
+
+)
+
+.style(
+
+"fill",
+
+"white"
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+function drawCommittee(){
+
+
+
+let box =
 document.getElementById("committee");
 
 
-committee.innerHTML="";
+
+box.innerHTML="";
 
 
 
-Object.keys(results).forEach(position=>{
+Object.keys(results).forEach(role=>{
 
 
 let winner =
-results[position].winner;
+results[role].winner;
+
 
 
 let seat =
 document.createElement("div");
 
 
+
 seat.className="seat";
 
 
 seat.style.background =
-results[position]
-.candidates[winner]
-.colour;
+results[role].candidates[winner]?.colour
+|| "#64748b";
+
 
 
 seat.innerHTML =
-
-position+
+role+
 "<br>"+
 winner;
 
 
 
-committee.appendChild(seat);
+box.appendChild(seat);
 
 
 
 });
-
-
-
 
 
 }
