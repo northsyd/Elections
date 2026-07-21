@@ -4,27 +4,29 @@ from collections import Counter, defaultdict
 
 
 # ==========================
-# LOAD DATA
+# LOAD CSV FILES
 # ==========================
 
 
 def load_candidates():
 
-    candidates = defaultdict(dict)
+    candidates = {}
 
-    with open("data/candidates.csv") as file:
+    with open("data/candidates.csv", newline="") as file:
 
         reader = csv.DictReader(file)
 
         for row in reader:
 
-            candidates[row["role"]][row["candidate"]] = {
+            candidates[row["candidate"]] = {
+
+                "party": row["party"],
+
                 "colour": row["colour"]
+
             }
 
     return candidates
-
-
 
 
 
@@ -32,7 +34,7 @@ def load_ballots():
 
     ballots = defaultdict(list)
 
-    with open("data/current_election.csv") as file:
+    with open("data/current_ballots.csv", newline="") as file:
 
         reader = csv.DictReader(file)
 
@@ -47,14 +49,10 @@ def load_ballots():
                     preferences.append(value)
 
 
-            ballots[row["role"]].append(
-                preferences
-            )
+            ballots[row["role"]].append(preferences)
 
 
     return ballots
-
-
 
 
 
@@ -62,7 +60,7 @@ def load_previous():
 
     previous = defaultdict(dict)
 
-    with open("data/previous_election.csv") as file:
+    with open("data/previous_results.csv", newline="") as file:
 
         reader = csv.DictReader(file)
 
@@ -72,7 +70,6 @@ def load_previous():
                 row["first_preference_percent"]
             )
 
-
     return previous
 
 
@@ -80,13 +77,13 @@ def load_previous():
 
 
 # ==========================
-# PREFERENTIAL COUNTING
+# PREFERENTIAL COUNT
 # ==========================
 
 
-def count_election(ballots):
+def run_count(ballots):
 
-    candidates=[]
+    candidates = []
 
     for ballot in ballots:
 
@@ -97,8 +94,7 @@ def count_election(ballots):
                 candidates.append(candidate)
 
 
-
-    active=candidates.copy()
+    active = candidates.copy()
 
     rounds=[]
 
@@ -108,17 +104,17 @@ def count_election(ballots):
 
     while True:
 
-        counts=Counter()
 
+        counts = Counter()
 
 
         for ballot in ballots:
 
-            for preference in ballot:
+            for candidate in ballot:
 
-                if preference in active:
+                if candidate in active:
 
-                    counts[preference]+=1
+                    counts[candidate]+=1
 
                     break
 
@@ -130,6 +126,8 @@ def count_election(ballots):
         total=sum(counts.values())
 
 
+
+        # winner
 
         for candidate,votes in counts.items():
 
@@ -152,12 +150,11 @@ def count_election(ballots):
 
 
 
-
         eliminated=min(
 
             active,
 
-            key=lambda c:counts.get(c,0)
+            key=lambda c: counts.get(c,0)
 
         )
 
@@ -172,29 +169,34 @@ def count_election(ballots):
 
         for ballot in ballots:
 
+
             if eliminated in ballot:
 
-                index=ballot.index(eliminated)
+
+                position=ballot.index(eliminated)
 
 
-                for preference in ballot[index+1:]:
+
+                for preference in ballot[position+1:]:
+
 
                     if preference in active:
 
                         transfers[preference]+=1
+
                         break
 
 
 
-        for destination,votes in transfers.items():
+        for target,votes in transfers.items():
 
             flows.append({
 
-                "from":eliminated,
+                "from": eliminated,
 
-                "to":destination,
+                "to": target,
 
-                "votes":votes
+                "votes": votes
 
             })
 
@@ -205,45 +207,49 @@ def count_election(ballots):
 
 
 # ==========================
-# RUN ALL ELECTIONS
+# BUILD RESULTS
 # ==========================
 
 
-candidates = load_candidates()
+candidate_info = load_candidates()
 
 ballots = load_ballots()
 
 previous = load_previous()
 
 
+
 results={}
 
 
 
-for role in ballots:
+for role,role_ballots in ballots.items():
 
 
-    result=count_election(
-        ballots[role]
-    )
+    result = run_count(role_ballots)
 
 
-    total=sum(
-        result["first_preferences"].values()
-    )
+
+    first = result["first_preferences"]
+
+
+    total=sum(first.values())
+
 
 
     first_percent={
 
-        c:round(v/total*100,2)
+        candidate:
+        round(votes/total*100,2)
 
-        for c,v in result["first_preferences"].items()
+        for candidate,votes in first.items()
 
     }
 
 
 
     swing={}
+
 
 
     for candidate,old in previous[role].items():
@@ -262,26 +268,77 @@ for role in ballots:
 
 
 
+    # attach candidate data
+
+    candidates={}
+
+
+
+    for candidate in first_percent:
+
+
+        info = candidate_info.get(
+
+            candidate,
+
+            {}
+
+        )
+
+
+        candidates[candidate]={
+
+            "party":info.get(
+                "party",
+                "Independent"
+            ),
+
+
+            "colour":info.get(
+                "colour",
+                "#64748b"
+            ),
+
+
+            # incumbent for this role only
+
+            "incumbent":
+            candidate in previous[role]
+
+        }
+
+
+
+
+
     results[role]={
+
 
         "winner":result["winner"],
 
-        "candidates":candidates[role],
+
+        "candidates":candidates,
+
 
         "first_preferences":
         result["first_preferences"],
 
+
         "first_percent":
         first_percent,
+
 
         "final_count":
         result["final_count"],
 
+
         "swing":
         swing,
 
+
         "rounds":
         result["rounds"],
+
 
         "flows":
         result["flows"]
@@ -292,21 +349,25 @@ for role in ballots:
 
 
 
+
+
 # ==========================
 # EXPORT
 # ==========================
 
 
-with open(
-    "results.json",
-    "w"
-) as file:
+with open("results.json","w") as file:
 
     json.dump(
+
         results,
+
         file,
+
         indent=4
+
     )
+
 
 
 print("Election completed!")
