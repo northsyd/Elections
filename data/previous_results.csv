@@ -1,17 +1,11 @@
-role,candidate,first_preference_percent
-President,Lachlan Steenson,52.0
-President,Alex Smith,48.0
+role,candidate,first_preference_percent,two_candidate_percent
+President,Lachlan Steenson,52.0,55.0
+President,Alex Smith,48.0,45.0
 
-Vice President,Mia Jones,55.0
-Vice President,Lachlan Steenson,45.0
+Vice President,Mia Jones,55.0,55.0
+Vice President,Lachlan Steenson,45.0,45.0
 
-Secretary,Alex Smith,60.0
-Secretary,Jamie Brown,40.0
+Secretary,Alex Smith,60.0,60.0
+Secretary,Jamie Brown,40.0,40.0
 
-Treasurer,Sam Lee,100.0
-
-Policy Officer,Lachlan Steenson,70.0
-Policy Officer,Jamie Brown,30.0
-
-Research Officer,Taylor Wilson,65.0
-Research Officer,Casey Nguyen,35.0
+Treasurer,Sam Lee,100.0,100.0
