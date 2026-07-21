@@ -16,23 +16,30 @@
         "party": "Students First",
         "colour": "#16a34a",
         "incumbent": false
+      },
+      "Mia Jones": {
+        "party": "Community",
+        "colour": "#9333ea",
+        "incumbent": false
       }
     },
     "first_percent": {
       "Lachlan Steenson": 45,
-      "Alex Smith": 35,
-      "Jamie Brown": 20
+      "Alex Smith": 32,
+      "Jamie Brown": 15,
+      "Mia Jones": 8
     },
     "primary_swing": {
-      "Lachlan Steenson": 3.5,
-      "Alex Smith": -2.0,
-      "Jamie Brown": -1.5
+      "Lachlan Steenson": 4.2,
+      "Alex Smith": -1.8,
+      "Jamie Brown": -1.5,
+      "Mia Jones": -0.9
     },
     "two_pp": {
-      "Lachlan Steenson": 55,
-      "Alex Smith": 45
+      "Lachlan Steenson": 57,
+      "Alex Smith": 43
     },
-    "two_pp_swing": 2.5,
+    "two_pp_swing": 3.5,
     "history": [
       {
         "Lachlan Steenson": {
@@ -40,10 +47,128 @@
           "percent": 45
         },
         "Alex Smith": {
-          "votes": 35,
-          "percent": 35
+          "votes": 32,
+          "percent": 32
         },
         "Jamie Brown": {
+          "votes": 15,
+          "percent": 15
+        },
+        "Mia Jones": {
+          "votes": 8,
+          "percent": 8
+        }
+      },
+      {
+        "Lachlan Steenson": {
+          "votes": 53,
+          "percent": 53
+        },
+        "Alex Smith": {
+          "votes": 47,
+          "percent": 47
+        }
+      }
+    ]
+  },
+
+  "Secretary": {
+    "winner": "Alex Smith",
+    "candidates": {
+      "Alex Smith": {
+        "party": "Forward",
+        "colour": "#dc2626",
+        "incumbent": false
+      },
+      "Lachlan Steenson": {
+        "party": "Independent",
+        "colour": "#2563eb",
+        "incumbent": false
+      },
+      "Jamie Brown": {
+        "party": "Students First",
+        "colour": "#16a34a",
+        "incumbent": true
+      }
+    },
+    "first_percent": {
+      "Alex Smith": 52,
+      "Lachlan Steenson": 30,
+      "Jamie Brown": 18
+    },
+    "primary_swing": {
+      "Alex Smith": 5,
+      "Lachlan Steenson": -2,
+      "Jamie Brown": -3
+    },
+    "two_pp": {
+      "Alex Smith": 60,
+      "Lachlan Steenson": 40
+    },
+    "two_pp_swing": -2,
+    "history": [
+      {
+        "Alex Smith": {
+          "votes": 52,
+          "percent": 52
+        },
+        "Lachlan Steenson": {
+          "votes": 30,
+          "percent": 30
+        },
+        "Jamie Brown": {
+          "votes": 18,
+          "percent": 18
+        }
+      }
+    ]
+  },
+
+  "Treasurer": {
+    "winner": "Sam Lee",
+    "candidates": {
+      "Sam Lee": {
+        "party": "Community",
+        "colour": "#9333ea",
+        "incumbent": false
+      },
+      "Lachlan Steenson": {
+        "party": "Independent",
+        "colour": "#2563eb",
+        "incumbent": false
+      },
+      "Alex Smith": {
+        "party": "Forward",
+        "colour": "#dc2626",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Sam Lee": 55,
+      "Lachlan Steenson": 25,
+      "Alex Smith": 20
+    },
+    "primary_swing": {
+      "Sam Lee": 7,
+      "Lachlan Steenson": -4,
+      "Alex Smith": -3
+    },
+    "two_pp": {
+      "Sam Lee": 65,
+      "Lachlan Steenson": 35
+    },
+    "two_pp_swing": 5,
+    "history": [
+      {
+        "Sam Lee": {
+          "votes": 55,
+          "percent": 55
+        },
+        "Lachlan Steenson": {
+          "votes": 25,
+          "percent": 25
+        },
+        "Alex Smith": {
           "votes": 20,
           "percent": 20
         }
