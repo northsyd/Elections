@@ -7,10 +7,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3"></script>
-
-
 <style>
 
 body {
@@ -250,15 +246,6 @@ ELECTED
 
 
 
-<div class="card">
-
-<h2>Preference Flow</h2>
-
-
-<svg id="sankey"></svg>
-
-
-</div>
 
 
 
@@ -608,8 +595,13 @@ Math.abs(
 // SANKEY
 //
 
-drawSankey(data);
+<div class="card">
 
+<h2>Count History</h2>
+
+<div id="history"></div>
+
+</div>
 
 
 
