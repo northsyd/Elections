@@ -3,28 +3,28 @@
     "winner": "Lachlan STEENSON",
     "candidates": {
       "Emma LUO": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "a",
+        "colour": "#125000",
         "incumbent": false
       },
       "Lachlan STEENSON": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       },
       "Yiping PAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Roy ZHANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Ethan HUANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       }
     },
@@ -58,38 +58,38 @@
     "winner": "Charlie GREEN",
     "candidates": {
       "Carlos YIN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "a",
+        "colour": "#125000",
         "incumbent": false
       },
       "Charlie GREEN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       },
       "Yiping PAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Brian CHEN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       },
       "Roy ZHANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Mickey SHAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       },
       "Tommy TIAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       }
     },
@@ -129,33 +129,33 @@
     "winner": "Charlie GREEN",
     "candidates": {
       "Carlos YIN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "a",
+        "colour": "#125000",
         "incumbent": false
       },
       "Tommy TIAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Marcus NG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       },
       "Charlie GREEN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       },
       "Roy ZHANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Mickey SHAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       }
     },
@@ -207,18 +207,18 @@
     "winner": "Roy ZHANG",
     "candidates": {
       "Tommy TIAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Mickey SHAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       },
       "Roy ZHANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       }
     },
@@ -246,38 +246,38 @@
     "winner": "Lachlan STEENSON",
     "candidates": {
       "Carlos YIN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "a",
+        "colour": "#125000",
         "incumbent": false
       },
       "Lachlan STEENSON": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       },
       "Marcus NG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       },
       "Tommy TIAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Roy ZHANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Mickey SHAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       },
       "Yiping PAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       }
     },
@@ -342,28 +342,28 @@
     "winner": "Charlie GREEN",
     "candidates": {
       "Carlos YIN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "a",
+        "colour": "#125000",
         "incumbent": false
       },
       "Charlie GREEN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       },
       "Lachlan STEENSON": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "jog",
+        "colour": "#660000",
         "incumbent": false
       },
       "Roy ZHANG": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "b",
+        "colour": "#006a80",
         "incumbent": false
       },
       "Mickey SHAN": {
-        "party": "Independent",
-        "colour": "#555555",
+        "party": "c",
+        "colour": "#3c00bd",
         "incumbent": false
       }
     },
