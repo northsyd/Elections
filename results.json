@@ -1,0 +1,660 @@
+{
+    "President": {
+        "winner": "Lachlan Steenson",
+        "candidates": {
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": true
+            },
+            "Alex Smith": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": true
+            },
+            "Jamie Brown": {
+                "party": "Students First",
+                "colour": "#16a34a",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Lachlan Steenson": 3,
+            "Alex Smith": 2,
+            "Jamie Brown": 1
+        },
+        "first_percent": {
+            "Lachlan Steenson": 50.0,
+            "Alex Smith": 33.33,
+            "Jamie Brown": 16.67
+        },
+        "final_count": {
+            "Lachlan Steenson": 4,
+            "Alex Smith": 2
+        },
+        "swing": {
+            "Lachlan Steenson": -2.0,
+            "Alex Smith": -14.67
+        },
+        "rounds": [
+            {
+                "Lachlan Steenson": 3,
+                "Alex Smith": 2,
+                "Jamie Brown": 1
+            },
+            {
+                "Lachlan Steenson": 3,
+                "Alex Smith": 2,
+                "Jamie Brown": 1
+            },
+            {
+                "Lachlan Steenson": 3,
+                "Alex Smith": 2,
+                "Jamie Brown": 1
+            },
+            {
+                "Lachlan Steenson": 4,
+                "Alex Smith": 2
+            }
+        ],
+        "flows": [
+            {
+                "from": "Mia Jones",
+                "to": "Sam Lee",
+                "votes": 4
+            },
+            {
+                "from": "Jamie Brown",
+                "to": "Alex Smith",
+                "votes": 1
+            },
+            {
+                "from": "Jamie Brown",
+                "to": "Lachlan Steenson",
+                "votes": 2
+            }
+        ]
+    },
+    "Vice President": {
+        "winner": "Mia Jones",
+        "candidates": {
+            "Mia Jones": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": true
+            },
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": true
+            },
+            "Alex Smith": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Mia Jones": 2,
+            "Lachlan Steenson": 2,
+            "Alex Smith": 1
+        },
+        "first_percent": {
+            "Mia Jones": 40.0,
+            "Lachlan Steenson": 40.0,
+            "Alex Smith": 20.0
+        },
+        "final_count": {
+            "Mia Jones": 3,
+            "Lachlan Steenson": 2
+        },
+        "swing": {
+            "Mia Jones": -15.0,
+            "Lachlan Steenson": -5.0
+        },
+        "rounds": [
+            {
+                "Mia Jones": 2,
+                "Lachlan Steenson": 2,
+                "Alex Smith": 1
+            },
+            {
+                "Mia Jones": 2,
+                "Lachlan Steenson": 2,
+                "Alex Smith": 1
+            },
+            {
+                "Mia Jones": 2,
+                "Lachlan Steenson": 2,
+                "Alex Smith": 1
+            },
+            {
+                "Mia Jones": 3,
+                "Lachlan Steenson": 2
+            }
+        ],
+        "flows": [
+            {
+                "from": "Jamie Brown",
+                "to": "Sam Lee",
+                "votes": 5
+            },
+            {
+                "from": "Alex Smith",
+                "to": "Mia Jones",
+                "votes": 2
+            },
+            {
+                "from": "Alex Smith",
+                "to": "Lachlan Steenson",
+                "votes": 1
+            }
+        ]
+    },
+    "Secretary": {
+        "winner": "Alex Smith",
+        "candidates": {
+            "Alex Smith": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": true
+            },
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": false
+            },
+            "Jamie Brown": {
+                "party": "Students First",
+                "colour": "#16a34a",
+                "incumbent": true
+            }
+        },
+        "first_preferences": {
+            "Alex Smith": 2,
+            "Lachlan Steenson": 1,
+            "Jamie Brown": 1
+        },
+        "first_percent": {
+            "Alex Smith": 50.0,
+            "Lachlan Steenson": 25.0,
+            "Jamie Brown": 25.0
+        },
+        "final_count": {
+            "Alex Smith": 3,
+            "Jamie Brown": 1
+        },
+        "swing": {
+            "Alex Smith": -10.0,
+            "Jamie Brown": -15.0
+        },
+        "rounds": [
+            {
+                "Alex Smith": 2,
+                "Lachlan Steenson": 1,
+                "Jamie Brown": 1
+            },
+            {
+                "Alex Smith": 2,
+                "Lachlan Steenson": 1,
+                "Jamie Brown": 1
+            },
+            {
+                "Alex Smith": 2,
+                "Lachlan Steenson": 1,
+                "Jamie Brown": 1
+            },
+            {
+                "Alex Smith": 3,
+                "Jamie Brown": 1
+            }
+        ],
+        "flows": [
+            {
+                "from": "Mia Jones",
+                "to": "Sam Lee",
+                "votes": 4
+            },
+            {
+                "from": "Lachlan Steenson",
+                "to": "Jamie Brown",
+                "votes": 1
+            },
+            {
+                "from": "Lachlan Steenson",
+                "to": "Alex Smith",
+                "votes": 1
+            }
+        ]
+    },
+    "Treasurer": {
+        "winner": "Lachlan Steenson",
+        "candidates": {
+            "Sam Lee": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": true
+            },
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": false
+            },
+            "Alex Smith": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Sam Lee": 1,
+            "Lachlan Steenson": 1,
+            "Alex Smith": 1
+        },
+        "first_percent": {
+            "Sam Lee": 33.33,
+            "Lachlan Steenson": 33.33,
+            "Alex Smith": 33.33
+        },
+        "final_count": {
+            "Lachlan Steenson": 2,
+            "Alex Smith": 1
+        },
+        "swing": {
+            "Sam Lee": -66.67
+        },
+        "rounds": [
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1,
+                "Alex Smith": 1
+            },
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1,
+                "Alex Smith": 1
+            },
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1,
+                "Alex Smith": 1
+            },
+            {
+                "Lachlan Steenson": 2,
+                "Alex Smith": 1
+            }
+        ],
+        "flows": [
+            {
+                "from": "Jamie Brown",
+                "to": "Mia Jones",
+                "votes": 3
+            },
+            {
+                "from": "Sam Lee",
+                "to": "Lachlan Steenson",
+                "votes": 2
+            },
+            {
+                "from": "Sam Lee",
+                "to": "Alex Smith",
+                "votes": 1
+            }
+        ]
+    },
+    "Events Officer": {
+        "winner": "Jordan Patel",
+        "candidates": {
+            "Taylor Wilson": {
+                "party": "Progress",
+                "colour": "#9333ea",
+                "incumbent": false
+            },
+            "Jordan Patel": {
+                "party": "Students First",
+                "colour": "#16a34a",
+                "incumbent": false
+            },
+            "Casey Nguyen": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Taylor Wilson": 1,
+            "Jordan Patel": 1,
+            "Casey Nguyen": 1
+        },
+        "first_percent": {
+            "Taylor Wilson": 33.33,
+            "Jordan Patel": 33.33,
+            "Casey Nguyen": 33.33
+        },
+        "final_count": {
+            "Jordan Patel": 2,
+            "Casey Nguyen": 1
+        },
+        "swing": {},
+        "rounds": [
+            {
+                "Taylor Wilson": 1,
+                "Jordan Patel": 1,
+                "Casey Nguyen": 1
+            },
+            {
+                "Taylor Wilson": 1,
+                "Jordan Patel": 1,
+                "Casey Nguyen": 1
+            },
+            {
+                "Taylor Wilson": 1,
+                "Jordan Patel": 1,
+                "Casey Nguyen": 1
+            },
+            {
+                "Jordan Patel": 2,
+                "Casey Nguyen": 1
+            }
+        ],
+        "flows": [
+            {
+                "from": "Lachlan Steenson",
+                "to": "Alex Smith",
+                "votes": 3
+            },
+            {
+                "from": "Taylor Wilson",
+                "to": "Jordan Patel",
+                "votes": 2
+            },
+            {
+                "from": "Taylor Wilson",
+                "to": "Casey Nguyen",
+                "votes": 1
+            }
+        ]
+    },
+    "Media Officer": {
+        "winner": "Mia Jones",
+        "candidates": {
+            "Morgan Davis": {
+                "party": "Progress",
+                "colour": "#9333ea",
+                "incumbent": false
+            },
+            "Mia Jones": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": false
+            },
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Morgan Davis": 1,
+            "Mia Jones": 1,
+            "Lachlan Steenson": 1
+        },
+        "first_percent": {
+            "Morgan Davis": 33.33,
+            "Mia Jones": 33.33,
+            "Lachlan Steenson": 33.33
+        },
+        "final_count": {
+            "Mia Jones": 2,
+            "Lachlan Steenson": 1
+        },
+        "swing": {},
+        "rounds": [
+            {
+                "Morgan Davis": 1,
+                "Mia Jones": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Morgan Davis": 1,
+                "Mia Jones": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Morgan Davis": 1,
+                "Mia Jones": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Mia Jones": 2,
+                "Lachlan Steenson": 1
+            }
+        ],
+        "flows": [
+            {
+                "from": "Alex Smith",
+                "to": "Jamie Brown",
+                "votes": 3
+            },
+            {
+                "from": "Morgan Davis",
+                "to": "Mia Jones",
+                "votes": 1
+            },
+            {
+                "from": "Morgan Davis",
+                "to": "Lachlan Steenson",
+                "votes": 1
+            }
+        ]
+    },
+    "Policy Officer": {
+        "winner": "Lachlan Steenson",
+        "candidates": {
+            "Jamie Brown": {
+                "party": "Students First",
+                "colour": "#16a34a",
+                "incumbent": true
+            },
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": true
+            },
+            "Alex Smith": {
+                "party": "Forward",
+                "colour": "#dc2626",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Jamie Brown": 1,
+            "Lachlan Steenson": 1,
+            "Alex Smith": 1
+        },
+        "first_percent": {
+            "Jamie Brown": 33.33,
+            "Lachlan Steenson": 33.33,
+            "Alex Smith": 33.33
+        },
+        "final_count": {
+            "Lachlan Steenson": 2,
+            "Alex Smith": 1
+        },
+        "swing": {
+            "Lachlan Steenson": -36.67,
+            "Jamie Brown": 3.33
+        },
+        "rounds": [
+            {
+                "Jamie Brown": 1,
+                "Lachlan Steenson": 1,
+                "Alex Smith": 1
+            },
+            {
+                "Jamie Brown": 1,
+                "Lachlan Steenson": 1,
+                "Alex Smith": 1
+            },
+            {
+                "Jamie Brown": 1,
+                "Lachlan Steenson": 1,
+                "Alex Smith": 1
+            },
+            {
+                "Lachlan Steenson": 2,
+                "Alex Smith": 1
+            }
+        ],
+        "flows": [
+            {
+                "from": "Sam Lee",
+                "to": "Mia Jones",
+                "votes": 3
+            },
+            {
+                "from": "Jamie Brown",
+                "to": "Lachlan Steenson",
+                "votes": 2
+            },
+            {
+                "from": "Jamie Brown",
+                "to": "Alex Smith",
+                "votes": 1
+            }
+        ]
+    },
+    "Research Officer": {
+        "winner": "Taylor Wilson",
+        "candidates": {
+            "Casey Nguyen": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": true
+            },
+            "Taylor Wilson": {
+                "party": "Progress",
+                "colour": "#9333ea",
+                "incumbent": true
+            }
+        },
+        "first_preferences": {
+            "Casey Nguyen": 1,
+            "Taylor Wilson": 1
+        },
+        "first_percent": {
+            "Casey Nguyen": 50.0,
+            "Taylor Wilson": 50.0
+        },
+        "final_count": {
+            "Taylor Wilson": 2
+        },
+        "swing": {
+            "Taylor Wilson": -15.0,
+            "Casey Nguyen": 15.0
+        },
+        "rounds": [
+            {
+                "Casey Nguyen": 1,
+                "Taylor Wilson": 1
+            },
+            {
+                "Casey Nguyen": 1,
+                "Taylor Wilson": 1
+            },
+            {
+                "Casey Nguyen": 1,
+                "Taylor Wilson": 1
+            },
+            {
+                "Casey Nguyen": 1,
+                "Taylor Wilson": 1
+            },
+            {
+                "Taylor Wilson": 2
+            }
+        ],
+        "flows": [
+            {
+                "from": "Jordan Patel",
+                "to": "Lachlan Steenson",
+                "votes": 2
+            },
+            {
+                "from": "Lachlan Steenson",
+                "to": "Alex Smith",
+                "votes": 2
+            },
+            {
+                "from": "Casey Nguyen",
+                "to": "Taylor Wilson",
+                "votes": 1
+            }
+        ]
+    },
+    "Membership Officer": {
+        "winner": "Lachlan Steenson",
+        "candidates": {
+            "Sam Lee": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": false
+            },
+            "Lachlan Steenson": {
+                "party": "Independent",
+                "colour": "#2563eb",
+                "incumbent": false
+            }
+        },
+        "first_preferences": {
+            "Sam Lee": 1,
+            "Lachlan Steenson": 1
+        },
+        "first_percent": {
+            "Sam Lee": 50.0,
+            "Lachlan Steenson": 50.0
+        },
+        "final_count": {
+            "Lachlan Steenson": 2
+        },
+        "swing": {},
+        "rounds": [
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Sam Lee": 1,
+                "Lachlan Steenson": 1
+            },
+            {
+                "Lachlan Steenson": 2
+            }
+        ],
+        "flows": [
+            {
+                "from": "Alex Smith",
+                "to": "Jamie Brown",
+                "votes": 2
+            },
+            {
+                "from": "Jamie Brown",
+                "to": "Mia Jones",
+                "votes": 2
+            },
+            {
+                "from": "Sam Lee",
+                "to": "Lachlan Steenson",
+                "votes": 1
+            }
+        ]
+    }
+}
