@@ -1,0 +1,396 @@
+{
+  "PRESIDENT": {
+    "winner": "Lachlan STEENSON",
+    "candidates": {
+      "Emma LUO": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Lachlan STEENSON": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Yiping PAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Roy ZHANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Ethan HUANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Emma LUO": 13.04,
+      "Lachlan STEENSON": 60.87,
+      "Yiping PAN": 8.7,
+      "Roy ZHANG": 8.7,
+      "Ethan HUANG": 8.7
+    },
+    "primary_swing": {},
+    "two_pp": {
+      "Emma LUO": 13.04,
+      "Lachlan STEENSON": 60.87,
+      "Yiping PAN": 8.7,
+      "Roy ZHANG": 8.7,
+      "Ethan HUANG": 8.7
+    },
+    "two_pp_swing": null,
+    "history": [
+      {
+        "Emma LUO": 3,
+        "Lachlan STEENSON": 14,
+        "Yiping PAN": 2,
+        "Roy ZHANG": 2,
+        "Ethan HUANG": 2
+      }
+    ]
+  },
+  "VICE PRESIDENT": {
+    "winner": "Charlie GREEN",
+    "candidates": {
+      "Carlos YIN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Charlie GREEN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Yiping PAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Brian CHEN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Roy ZHANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Mickey SHAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Tommy TIAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Carlos YIN": 4.35,
+      "Charlie GREEN": 56.52,
+      "Yiping PAN": 8.7,
+      "Brian CHEN": 13.04,
+      "Roy ZHANG": 8.7,
+      "Mickey SHAN": 4.35,
+      "Tommy TIAN": 4.35
+    },
+    "primary_swing": {},
+    "two_pp": {
+      "Carlos YIN": 4.35,
+      "Charlie GREEN": 56.52,
+      "Yiping PAN": 8.7,
+      "Brian CHEN": 13.04,
+      "Roy ZHANG": 8.7,
+      "Mickey SHAN": 4.35,
+      "Tommy TIAN": 4.35
+    },
+    "two_pp_swing": null,
+    "history": [
+      {
+        "Carlos YIN": 1,
+        "Charlie GREEN": 13,
+        "Yiping PAN": 2,
+        "Brian CHEN": 3,
+        "Roy ZHANG": 2,
+        "Mickey SHAN": 1,
+        "Tommy TIAN": 1
+      }
+    ]
+  },
+  "SECRETARY": {
+    "winner": "Charlie GREEN",
+    "candidates": {
+      "Carlos YIN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Tommy TIAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Marcus NG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Charlie GREEN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Roy ZHANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Mickey SHAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Carlos YIN": 8.7,
+      "Tommy TIAN": 13.04,
+      "Marcus NG": 21.74,
+      "Charlie GREEN": 43.48,
+      "Roy ZHANG": 8.7,
+      "Mickey SHAN": 4.35
+    },
+    "primary_swing": {},
+    "two_pp": {
+      "Charlie GREEN": 56.52,
+      "Tommy TIAN": 21.74,
+      "Marcus NG": 21.74
+    },
+    "two_pp_swing": null,
+    "history": [
+      {
+        "Carlos YIN": 2,
+        "Tommy TIAN": 3,
+        "Marcus NG": 5,
+        "Charlie GREEN": 10,
+        "Roy ZHANG": 2,
+        "Mickey SHAN": 1
+      },
+      {
+        "Carlos YIN": 2,
+        "Tommy TIAN": 4,
+        "Marcus NG": 5,
+        "Charlie GREEN": 10,
+        "Roy ZHANG": 2
+      },
+      {
+        "Charlie GREEN": 11,
+        "Tommy TIAN": 5,
+        "Marcus NG": 5,
+        "Roy ZHANG": 2
+      },
+      {
+        "Charlie GREEN": 13,
+        "Tommy TIAN": 5,
+        "Marcus NG": 5
+      }
+    ]
+  },
+  "TREASURER": {
+    "winner": "Roy ZHANG",
+    "candidates": {
+      "Tommy TIAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Mickey SHAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Roy ZHANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Tommy TIAN": 13.04,
+      "Mickey SHAN": 21.74,
+      "Roy ZHANG": 65.22
+    },
+    "primary_swing": {},
+    "two_pp": {
+      "Tommy TIAN": 13.04,
+      "Mickey SHAN": 21.74,
+      "Roy ZHANG": 65.22
+    },
+    "two_pp_swing": null,
+    "history": [
+      {
+        "Tommy TIAN": 3,
+        "Mickey SHAN": 5,
+        "Roy ZHANG": 15
+      }
+    ]
+  },
+  "TRANSIT CLUB LIAISON": {
+    "winner": "Lachlan STEENSON",
+    "candidates": {
+      "Carlos YIN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Lachlan STEENSON": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Marcus NG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Tommy TIAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Roy ZHANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Mickey SHAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Yiping PAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Carlos YIN": 13.04,
+      "Lachlan STEENSON": 30.43,
+      "Marcus NG": 8.7,
+      "Tommy TIAN": 8.7,
+      "Roy ZHANG": 21.74,
+      "Mickey SHAN": 8.7,
+      "Yiping PAN": 8.7
+    },
+    "primary_swing": {},
+    "two_pp": {
+      "Lachlan STEENSON": 65.22,
+      "Yiping PAN": 34.78
+    },
+    "two_pp_swing": null,
+    "history": [
+      {
+        "Carlos YIN": 3,
+        "Lachlan STEENSON": 7,
+        "Marcus NG": 2,
+        "Tommy TIAN": 2,
+        "Roy ZHANG": 5,
+        "Mickey SHAN": 2,
+        "Yiping PAN": 2
+      },
+      {
+        "Carlos YIN": 3,
+        "Lachlan STEENSON": 7,
+        "Yiping PAN": 4,
+        "Tommy TIAN": 2,
+        "Roy ZHANG": 5,
+        "Mickey SHAN": 2
+      },
+      {
+        "Carlos YIN": 3,
+        "Lachlan STEENSON": 7,
+        "Yiping PAN": 6,
+        "Roy ZHANG": 5,
+        "Mickey SHAN": 2
+      },
+      {
+        "Carlos YIN": 3,
+        "Lachlan STEENSON": 8,
+        "Yiping PAN": 7,
+        "Roy ZHANG": 5
+      },
+      {
+        "Lachlan STEENSON": 10,
+        "Yiping PAN": 7,
+        "Roy ZHANG": 6
+      },
+      {
+        "Lachlan STEENSON": 15,
+        "Yiping PAN": 8
+      }
+    ]
+  },
+  "ARCHIVIST": {
+    "winner": "Charlie GREEN",
+    "candidates": {
+      "Carlos YIN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Charlie GREEN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Lachlan STEENSON": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Roy ZHANG": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      },
+      "Mickey SHAN": {
+        "party": "Independent",
+        "colour": "#555555",
+        "incumbent": false
+      }
+    },
+    "first_percent": {
+      "Carlos YIN": 13.04,
+      "Charlie GREEN": 65.22,
+      "Lachlan STEENSON": 13.04,
+      "Roy ZHANG": 4.35,
+      "Mickey SHAN": 4.35
+    },
+    "primary_swing": {},
+    "two_pp": {
+      "Carlos YIN": 13.04,
+      "Charlie GREEN": 65.22,
+      "Lachlan STEENSON": 13.04,
+      "Roy ZHANG": 4.35,
+      "Mickey SHAN": 4.35
+    },
+    "two_pp_swing": null,
+    "history": [
+      {
+        "Carlos YIN": 3,
+        "Charlie GREEN": 15,
+        "Lachlan STEENSON": 3,
+        "Roy ZHANG": 1,
+        "Mickey SHAN": 1
+      }
+    ]
+  }
+}
