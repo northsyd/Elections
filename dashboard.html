@@ -358,9 +358,14 @@ html+=`
 
 `;
 
-Object.entries(round)
+    Object.entries(round)
 
 .forEach(([name,v])=>{
+
+let total = Object.values(round)
+.reduce((a,b)=>a+b,0);
+
+let percent = ((v / total) * 100).toFixed(1);
 
 
 html+=`
@@ -369,7 +374,7 @@ html+=`
 
 <span>${name}</span>
 
-<span>${v.votes} (${v.percent}%)</span>
+<span>${v} (${percent}%)</span>
 
 </div>
 
