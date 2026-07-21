@@ -1,344 +1,163 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>NSTA Election Centre</title>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta charset="UTF-8">
+<title>Election Results</title>
 
 <style>
-
 body {
-
-    background:#0b1220;
-    color:white;
-    font-family:Arial, sans-serif;
-    margin:40px;
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    color: #111827;
 }
 
+header {
+    background: #111827;
+    color: white;
+    padding: 25px;
+}
 
 h1 {
-
-    font-size:48px;
-
+    margin: 0;
 }
 
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
 
 select {
-
-    font-size:22px;
-    padding:10px;
-    border-radius:10px;
-
+    padding: 10px;
+    font-size: 16px;
 }
-
-
 
 .card {
-
-    background:#172033;
-    border-radius:18px;
-    padding:25px;
-    margin:25px 0;
-
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px #0002;
 }
-
-
-
-.result {
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-
 
 .winner {
-
-    font-size:42px;
-    font-weight:bold;
-
+    font-size: 28px;
+    font-weight: bold;
 }
-
-
 
 .badge {
-
-    background:#16a34a;
-    padding:12px 20px;
-    border-radius:20px;
-    font-weight:bold;
-
+    background: #374151;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 12px;
 }
 
-
-
-canvas {
-
-    max-height:350px;
-
+.candidate {
+    margin: 15px 0;
 }
 
+.bar {
+    height: 25px;
+    border-radius: 5px;
+    color:white;
+    padding-left:8px;
+    line-height:25px;
+    font-size:14px;
+}
 
-
-.twoPP {
-
+.row {
     display:flex;
-    height:55px;
-    border-radius:30px;
-    overflow:hidden;
-
+    justify-content:space-between;
 }
 
-
-
-.side {
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-
+.positive {
+    color: green;
 }
 
-
-
-#sankey {
-
-    width:100%;
-    height:500px;
-
+.negative {
+    color:red;
 }
-
-
-
-.parliament {
-
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-
-}
-
-
 
 .seat {
-
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    margin:12px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
+    display:inline-block;
+    padding:12px;
+    margin:5px;
+    border-radius:8px;
+    color:white;
+    min-width:120px;
     text-align:center;
-    font-size:14px;
-    font-weight:bold;
-
 }
 
-
+.count {
+    border-left:4px solid #9ca3af;
+    padding-left:15px;
+    margin:10px 0;
+}
 
 </style>
 
 </head>
 
-
-
 <body>
 
+<header>
+<h1>Election Results Dashboard</h1>
+</header>
 
-<h1>NSTA Election Centre</h1>
 
-
+<div class="container">
 
 <select id="roleSelect"></select>
 
 
+<div id="content"></div>
 
 
+<h2>Parliament / Committee</h2>
 
-<div class="card">
-
-
-<div class="result">
-
-
-<div>
-
-<div class="badge">
-ELECTED
-</div>
-
-
-<div class="winner" id="winner">
-</div>
+<div class="card" id="parliament"></div>
 
 
 </div>
-
-
-<div id="role">
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-<h2>First Preferences</h2>
-
-<canvas id="firstChart"></canvas>
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-<h2>Two Candidate Preferred</h2>
-
-
-<div class="twoPP" id="twopp"></div>
-
-
-<p id="margin"></p>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-<h2>First Preference Swing</h2>
-
-
-<canvas id="swingChart"></canvas>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h2>Committee</h2>
-
-
-<div class="parliament" id="committee"></div>
-
-
-</div>
-
-
-
-
-
-
-
 
 
 <script>
 
 
-let results;
-
-
-let firstChart;
-let swingChart;
-
+let results={};
 
 
 fetch("results.json")
-
-
 .then(r=>r.json())
-
-
 .then(data=>{
 
+    results=data;
 
-results=data;
+    let select=document.getElementById("roleSelect");
 
+    Object.keys(results).forEach(role=>{
 
-let selector =
-document.getElementById("roleSelect");
+        let option=document.createElement("option");
 
+        option.value=role;
+        option.textContent=role;
 
+        select.appendChild(option);
 
-Object.keys(results).forEach(role=>{
-
-
-let option =
-document.createElement("option");
-
-
-option.value=role;
-
-option.textContent=role;
+    });
 
 
-selector.appendChild(option);
+    select.onchange=()=>showRole(select.value);
 
 
-});
+    showRole(Object.keys(results)[0]);
 
 
-
-selector.onchange=()=>{
-
-showRole(selector.value);
-
-};
-
-
-
-showRole(
-Object.keys(results)[0]
-);
-
-
+    buildParliament();
 
 });
-
-
-
-
-
 
 
 
@@ -346,539 +165,229 @@ Object.keys(results)[0]
 function showRole(role){
 
 
+let data=results[role];
 
-let data =
-results[role];
 
+let html=`
 
 
-document.getElementById("winner").innerHTML =
-data.winner;
+<div class="card">
 
+<h2>${role}</h2>
 
-document.getElementById("role").innerHTML =
-role;
 
+<div class="winner">
+Winner: ${data.winner}
+</div>
 
+</div>
 
 
+<div class="card">
 
-if(firstChart)
-firstChart.destroy();
+<h2>First Preferences</h2>
 
+`;
 
-if(swingChart)
-swingChart.destroy();
 
+Object.entries(data.first_percent)
 
+.sort((a,b)=>b[1]-a[1])
 
+.forEach(([name,value])=>{
 
 
+let c=data.candidates[name];
 
 
-//
-// FIRST PREFS
-//
+html+=`
 
+<div class="candidate">
 
-let names =
-Object.keys(data.first_percent);
+<div class="row">
 
+<span>
+${name}
 
+${c.incumbent ? '<span class="badge">EC</span>' : ''}
 
-firstChart = new Chart(
+<br>
 
-document.getElementById("firstChart"),
+<small>${c.party}</small>
 
-{
+</span>
 
+<b>${value}%</b>
 
-type:"bar",
+</div>
 
 
-data:{
+<div class="bar"
+style="width:${value}%;background:${c.colour}">
+</div>
 
 
-labels:names,
+</div>
 
-
-datasets:[{
-
-
-label:"First Preference %",
-
-
-data:Object.values(data.first_percent),
-
-
-
-backgroundColor:names.map(
-
-n=>data.candidates[n]?.colour || "#64748b"
-
-)
-
-
-}]
-
-},
-
-
-options:{
-
-scales:{
-
-y:{
-
-beginAtZero:true,
-
-max:100
-
-}
-
-}
-
-}
-
-
-}
-
-
-);
-
-
-
-
-
-
-
-
-//
-// SWING
-//
-
-
-swingChart = new Chart(
-
-document.getElementById("swingChart"),
-
-{
-
-
-type:"bar",
-
-
-data:{
-
-
-labels:Object.keys(data.swing),
-
-
-datasets:[{
-
-
-label:"Swing %",
-
-
-data:Object.values(data.swing),
-
-
-backgroundColor:Object.keys(data.swing).map(
-
-n=>data.candidates[n]?.colour || "#64748b"
-
-)
-
-
-}]
-
-}
-
-
-}
-
-
-);
-
-
-
-
-
-
-
-
-
-//
-// 2PP
-//
-
-
-let finalNames =
-Object.keys(data.final_count);
-
-
-let finalVotes =
-Object.values(data.final_count);
-
-
-
-let total =
-finalVotes.reduce(
-(a,b)=>a+b
-);
-
-
-
-let box =
-document.getElementById("twopp");
-
-
-box.innerHTML="";
-
-
-
-finalNames.forEach((name,index)=>{
-
-
-let percent =
-finalVotes[index]/total*100;
-
-
-
-let div =
-document.createElement("div");
-
-
-div.className="side";
-
-
-div.style.width =
-percent+"%";
-
-
-div.style.background =
-data.candidates[name]?.colour || "#64748b";
-
-
-div.innerHTML =
-name+" "+percent.toFixed(1)+"%";
-
-
-
-box.appendChild(div);
-
-
+`;
 
 });
 
 
+html+=`
 
+</div>
 
-document.getElementById("margin").innerHTML =
-
-"Margin: "+
-Math.abs(
-(finalVotes[0]-finalVotes[1])
-/total*100
-).toFixed(1)
-+"%";
-
-
-
-
-
-
-
-
-
-//
-// SANKEY
-//
 
 <div class="card">
 
-<h2>Count History</h2>
+<h2>Primary Vote Swing</h2>
 
-<div id="history"></div>
+`;
+
+
+
+Object.entries(data.primary_swing)
+
+.forEach(([name,value])=>{
+
+
+html+=`
+
+<div class="row">
+
+<span>${name}</span>
+
+<span class="${value>=0?'positive':'negative'}">
+
+${value>0?"+":""}${value}%
+
+</span>
+
+</div>
+
+`;
+
+});
+
+
+html+=`
+
+</div>
+
+
+<div class="card">
+
+<h2>2PP</h2>
+
+`;
+
+
+Object.entries(data.two_pp)
+
+.forEach(([name,value])=>{
+
+
+html+=`
+
+<div class="candidate">
+
+<div class="row">
+
+<span>${name}</span>
+
+<b>${value}%</b>
+
+</div>
+
+
+<div class="bar"
+style="width:${value}%;background:${data.candidates[name]?.colour || '#555'}">
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+if(data.two_pp_swing !== null){
+
+html+=`
+
+<p>
+
+2PP Swing:
+
+<b class="${data.two_pp_swing>=0?'positive':'negative'}">
+
+${data.two_pp_swing>0?"+":""}${data.two_pp_swing}%
+
+</b>
+
+</p>
+
+`;
+
+}
+
+
+html+=`
 
 </div>
 
 
 
+<div class="card">
 
+<h2>Preference Count</h2>
 
+`;
 
 
-//
-// COMMITTEE
-//
+data.history.forEach((round,index)=>{
 
-drawCommittee();
 
+html+=`
 
+<div class="count">
 
-}
+<b>Count ${index+1}</b>
 
+`;
 
+Object.entries(round)
 
+.forEach(([name,v])=>{
 
 
+html+=`
 
+<div class="row">
 
+<span>${name}</span>
 
+<span>${v.votes} (${v.percent}%)</span>
 
-function drawSankey(data){
+</div>
 
-
-
-let svg =
-d3.select("#sankey");
-
-
-
-svg.selectAll("*").remove();
-
-
-
-if(!data.flows.length){
-
-return;
-
-}
-
-
-
-let names = [
-
-...new Set(
-
-data.flows.flatMap(
-
-f=>[f.from,f.to]
-
-)
-
-)
-
-];
-
-
-
-
-let nodes =
-names.map(
-name=>({name:name})
-);
-
-
-
-
-let links =
-data.flows.map(
-f=>({
-
-source:names.indexOf(f.from),
-
-target:names.indexOf(f.to),
-
-value:f.votes
-
-})
-
-);
-
-
-
-
-
-let sankey =
-d3.sankey()
-
-.nodeWidth(25)
-
-.nodePadding(30)
-
-.extent(
-
-[
-[20,20],
-[900,450]
-]
-
-);
-
-
-
-
-let graph =
-sankey({
-
-nodes:nodes,
-
-links:links
+`;
 
 });
 
 
+html+=`</div>`;
 
 
+});
 
-svg.append("g")
 
-.selectAll("path")
+html+=`</div>`;
 
-.data(graph.links)
 
-.enter()
-
-.append("path")
-
-.attr(
-
-"d",
-
-d3.sankeyLinkHorizontal()
-
-)
-
-.attr(
-
-"stroke",
-
-"#94a3b8"
-
-)
-
-.attr(
-
-"stroke-width",
-
-d=>Math.max(2,d.width)
-
-)
-
-.attr(
-
-"fill",
-
-"none"
-
-)
-
-.attr(
-
-"opacity",
-
-0.6
-
-);
-
-
-
-
-
-
-let node =
-svg.append("g")
-
-.selectAll("g")
-
-.data(graph.nodes)
-
-.enter()
-
-.append("g");
-
-
-
-
-
-node.append("rect")
-
-.attr(
-
-"x",
-
-d=>d.x0
-
-)
-
-.attr(
-
-"y",
-
-d=>d.y0
-
-)
-
-.attr(
-
-"width",
-
-d=>d.x1-d.x0
-
-)
-
-.attr(
-
-"height",
-
-d=>d.y1-d.y0
-
-)
-
-.attr(
-
-"fill",
-
-d=>data.candidates[d.name]?.colour || "#64748b"
-
-);
-
-
-
-
-
-node.append("text")
-
-.attr(
-
-"x",
-
-d=>d.x0-6
-
-)
-
-.attr(
-
-"y",
-
-d=>(d.y0+d.y1)/2
-
-)
-
-.attr(
-
-"text-anchor",
-
-"end"
-
-)
-
-.text(
-
-d=>d.name
-
-)
-
-.style(
-
-"fill",
-
-"white"
-
-);
-
+document.getElementById("content").innerHTML=html;
 
 
 }
@@ -888,66 +397,41 @@ d=>d.name
 
 
 
+function buildParliament(){
 
 
+let box=document.getElementById("parliament");
 
 
-function drawCommittee(){
+Object.entries(results).forEach(([role,data])=>{
 
 
-
-let box =
-document.getElementById("committee");
+let c=data.candidates[data.winner];
 
 
+box.innerHTML+=`
 
-box.innerHTML="";
+<div class="seat"
+style="background:${c.colour}">
 
+<b>${data.winner}</b>
+<br>
 
+${role}
 
-Object.keys(results).forEach(role=>{
+</div>
 
-
-let winner =
-results[role].winner;
-
-
-
-let seat =
-document.createElement("div");
-
-
-
-seat.className="seat";
-
-
-seat.style.background =
-results[role].candidates[winner]?.colour
-|| "#64748b";
-
-
-
-seat.innerHTML =
-role+
-"<br>"+
-winner;
-
-
-
-box.appendChild(seat);
-
+`;
 
 
 });
 
 
 }
-
 
 
 </script>
 
 
 </body>
-
 </html>
