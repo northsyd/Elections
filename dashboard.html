@@ -1,1 +1,639 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>NSTA Election Centre</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body {
+
+    background:#0b1220;
+    color:white;
+    font-family:Arial, sans-serif;
+    margin:40px;
+
+}
+
+
+h1 {
+
+    font-size:48px;
+
+}
+
+
+select {
+
+    font-size:22px;
+    padding:10px;
+    border-radius:10px;
+
+}
+
+
+
+.card {
+
+    background:#172033;
+    border-radius:18px;
+    padding:25px;
+    margin:25px 0;
+
+}
+
+
+
+.result {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+
+.winner {
+
+    font-size:42px;
+    font-weight:bold;
+
+}
+
+
+
+.badge {
+
+    background:#16a34a;
+    padding:10px 20px;
+    border-radius:20px;
+    font-weight:bold;
+
+}
+
+
+
+canvas {
+
+    max-height:350px;
+
+}
+
+
+
+.twoPP {
+
+    display:flex;
+    height:50px;
+    border-radius:25px;
+    overflow:hidden;
+
+}
+
+
+
+.side {
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+
+}
+
+
+
+.flow {
+
+    font-size:20px;
+    line-height:2;
+
+}
+
+
+
+.parliament {
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+
+
+.seat {
+
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    margin:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>NSTA Election Centre</h1>
+
+
+<select id="roleSelect"></select>
+
+
+
+
+<div class="card">
+
+<div class="result">
+
+<div>
+
+<div>
+ELECTED
+</div>
+
+<div class="winner" id="winner">
+
+</div>
+
+</div>
+
+
+<div class="badge" id="role">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>First Preferences</h2>
+
+<canvas id="firstChart"></canvas>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>Two Candidate Preferred</h2>
+
+<div class="twoPP" id="twopp">
+
+</div>
+
+
+<p id="margin"></p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>First Preference Swing</h2>
+
+<canvas id="swingChart"></canvas>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h2>Preference Flow</h2>
+
+<div class="flow" id="flows">
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h2>Committee</h2>
+
+<div class="parliament" id="committee">
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+let results;
+
+
+let firstChart;
+let swingChart;
+
+
+
+fetch("results.json")
+
+.then(r=>r.json())
+
+.then(data=>{
+
+
+results=data;
+
+
+let select =
+document.getElementById("roleSelect");
+
+
+Object.keys(results).forEach(role=>{
+
+
+let option=document.createElement("option");
+
+option.value=role;
+
+option.textContent=role;
+
+
+select.appendChild(option);
+
+
+});
+
+
+
+select.onchange=()=>{
+
+showRole(select.value);
+
+};
+
+
+
+showRole(
+Object.keys(results)[0]
+);
+
+
+
+});
+
+
+
+
+
+
+
+function showRole(role){
+
+
+let data=results[role];
+
+
+
+document.getElementById("winner").innerHTML =
+data.winner;
+
+
+document.getElementById("role").innerHTML =
+role;
+
+
+
+
+
+
+if(firstChart)
+firstChart.destroy();
+
+
+
+if(swingChart)
+swingChart.destroy();
+
+
+
+
+
+
+// FIRST PREFS
+
+
+let names =
+Object.keys(data.first_percent);
+
+
+
+firstChart=new Chart(
+
+document.getElementById("firstChart"),
+
+{
+
+type:"bar",
+
+data:{
+
+labels:names,
+
+datasets:[{
+
+label:"First Preference %",
+
+data:Object.values(data.first_percent),
+
+backgroundColor:names.map(
+
+n=>data.candidates[n]?.colour || "#64748b"
+
+)
+
+}]
+
+},
+
+options:{
+
+scales:{
+
+y:{
+
+beginAtZero:true,
+max:100
+
+}
+
+}
+
+}
+
+}
+
+);
+
+
+
+
+
+
+
+// SWING
+
+
+swingChart=new Chart(
+
+document.getElementById("swingChart"),
+
+{
+
+type:"bar",
+
+data:{
+
+labels:Object.keys(data.swing),
+
+datasets:[{
+
+label:"Swing",
+
+data:Object.values(data.swing),
+
+backgroundColor:Object.keys(data.swing).map(
+
+n=>data.candidates[n]?.colour || "#64748b"
+
+)
+
+}]
+
+}
+
+}
+
+);
+
+
+
+
+
+
+
+
+
+// 2PP
+
+
+let finalNames =
+Object.keys(data.final_count);
+
+
+let finalVotes =
+Object.values(data.final_count);
+
+
+let total =
+finalVotes.reduce(
+(a,b)=>a+b
+);
+
+
+
+let box =
+document.getElementById("twopp");
+
+
+box.innerHTML="";
+
+
+
+finalNames.forEach(name=>{
+
+
+let width =
+(finalVotes[finalNames.indexOf(name)]
+/total)*100;
+
+
+
+let div=document.createElement("div");
+
+
+div.className="side";
+
+div.style.width=width+"%";
+
+div.style.background =
+data.candidates[name]?.colour || "#64748b";
+
+
+div.innerHTML =
+name+" "+width.toFixed(1)+"%";
+
+
+box.appendChild(div);
+
+
+});
+
+
+
+let margin =
+Math.abs(
+
+(finalVotes[0]-finalVotes[1])
+/total*100
+
+);
+
+
+
+document.getElementById("margin").innerHTML =
+"Margin: "+margin.toFixed(1)+"%";
+
+
+
+
+
+
+
+// FLOWS
+
+
+let flowBox =
+document.getElementById("flows");
+
+
+flowBox.innerHTML="";
+
+
+data.flows.forEach(flow=>{
+
+
+flowBox.innerHTML +=
+
+`
+${flow.from}
+→
+${flow.to}
+
+(${flow.votes} votes)
+
+<br>
+
+`;
+
+});
+
+
+
+
+
+
+
+
+
+// COMMITTEE
+
+
+let committee =
+document.getElementById("committee");
+
+
+committee.innerHTML="";
+
+
+
+Object.keys(results).forEach(position=>{
+
+
+let winner =
+results[position].winner;
+
+
+let seat =
+document.createElement("div");
+
+
+seat.className="seat";
+
+
+seat.style.background =
+results[position]
+.candidates[winner]
+.colour;
+
+
+seat.innerHTML =
+
+position+
+"<br>"+
+winner;
+
+
+
+committee.appendChild(seat);
+
+
+
+});
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
