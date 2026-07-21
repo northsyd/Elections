@@ -1,0 +1,36 @@
+name: Generate Results
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+
+    - name: Run election engine
+      run: python election_engine.py
+
+
+    - name: Save results
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Update results.json"
