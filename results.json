@@ -23,7 +23,7 @@
     ]
   },
   "VICE PRESIDENT": {
-    "winner": "Sylvia DUONG,",
+    "winner": "Sylvia DUONG",
     "candidates": {
       "Sylvia DUONG,": {
         "party": "Independent",
@@ -32,7 +32,7 @@
       }
     },
     "first_percent": {
-      "Sylvia DUONG,": 100.0
+      "Sylvia DUONG": 100.0
     },
     "primary_swing": {},
     "two_pp": {
@@ -41,7 +41,7 @@
     "two_pp_swing": null,
     "history": [
       {
-        "Sylvia DUONG,": 1
+        "Sylvia DUONG": 1
       }
     ]
   },
