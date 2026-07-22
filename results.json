@@ -11,60 +11,86 @@
     "first_percent": {
       "Lachlan STEENSON": 100.0
     },
-    "primary_swing": {},
+    "primary_swing": {
+      "Lachlan STEENSON": 39.2
+    },
     "two_pp": {
       "Lachlan STEENSON": 100.0
     },
-    "two_pp_swing": null,
+    "two_pp_swing": 22.0,
     "history": [
       {
-        "Lachlan STEENSON": 1
+        "Lachlan STEENSON": 2
       }
     ]
   },
   "VICE PRESIDENT": {
-    "winner": "Sylvia DUONG",
+    "winner": "Charlie GREEN",
     "candidates": {
       "Sylvia DUONG": {
         "party": " NSRAP",
         "colour": "#FF13F0",
         "incumbent": false
+      },
+      "Charlie GREEN": {
+        "party": "The Greensons",
+        "colour": "#5BB450",
+        "incumbent": true
       }
     },
     "first_percent": {
-      "Sylvia DUONG": 100.0
+      "Sylvia DUONG": 50.0,
+      "Charlie GREEN": 50.0
     },
-    "primary_swing": {},
+    "primary_swing": {
+      "Charlie GREEN": -10.8
+    },
     "two_pp": {
-      "Sylvia DUONG": 100.0
+      "Charlie GREEN": 100.0
     },
-    "two_pp_swing": null,
+    "two_pp_swing": 17.0,
     "history": [
       {
-        "Sylvia DUONG": 1
+        "Sylvia DUONG": 1,
+        "Charlie GREEN": 1
+      },
+      {
+        "Charlie GREEN": 2
       }
     ]
   },
   "SECRETARY": {
-    "winner": "Marcus NG",
+    "winner": "Charlie GREEN",
     "candidates": {
       "Marcus NG": {
         "party": " NSRAP",
         "colour": "#FF13F0",
         "incumbent": true
+      },
+      "Charlie GREEN": {
+        "party": "The Greensons",
+        "colour": "#5BB450",
+        "incumbent": false
       }
     },
     "first_percent": {
-      "Marcus NG": 100.0
+      "Marcus NG": 50.0,
+      "Charlie GREEN": 50.0
     },
-    "primary_swing": {},
+    "primary_swing": {
+      "Marcus NG": 28.3
+    },
     "two_pp": {
-      "Marcus NG": 100.0
+      "Charlie GREEN": 100.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Marcus NG": 1
+        "Marcus NG": 1,
+        "Charlie GREEN": 1
+      },
+      {
+        "Charlie GREEN": 2
       }
     ]
   },
@@ -80,14 +106,16 @@
     "first_percent": {
       "Roy ZHANG": 100.0
     },
-    "primary_swing": {},
+    "primary_swing": {
+      "Roy ZHANG": 30.0
+    },
     "two_pp": {
       "Roy ZHANG": 100.0
     },
-    "two_pp_swing": null,
+    "two_pp_swing": 20.0,
     "history": [
       {
-        "Roy ZHANG": 1
+        "Roy ZHANG": 2
       }
     ]
   },
@@ -110,76 +138,148 @@
     "two_pp_swing": null,
     "history": [
       {
-        "Sylvia DUONG": 1
+        "Sylvia DUONG": 2
       }
     ]
   },
   "EVENTS": {
-    "winner": "Yiping PAN",
+    "winner": "Sylvia DUONG",
     "candidates": {
       "Yiping PAN": {
+        "party": " NSRAP",
+        "colour": "#FF13F0",
+        "incumbent": false
+      },
+      "Sylvia DUONG": {
         "party": " NSRAP",
         "colour": "#FF13F0",
         "incumbent": false
       }
     },
     "first_percent": {
-      "Yiping PAN": 100.0
+      "Yiping PAN": 50.0,
+      "Sylvia DUONG": 50.0
     },
     "primary_swing": {},
     "two_pp": {
-      "Yiping PAN": 100.0
+      "Sylvia DUONG": 100.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Yiping PAN": 1
+        "Yiping PAN": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Marcus NG": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Carlos YIN": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Charles WANG": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Ian": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Hayton": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Ekrem": 1,
+        "Sylvia DUONG": 1
+      },
+      {
+        "Sylvia DUONG": 2
       }
     ]
   },
   "MEMBERSHIP": {
-    "winner": "Charles WANG",
+    "winner": "Lachlan STEENSON",
     "candidates": {
       "Charles WANG": {
         "party": "NSRAP",
         "colour": "#FF13F0",
         "incumbent": false
+      },
+      "Lachlan STEENSON": {
+        "party": " The Greensons",
+        "colour": "#5BB450",
+        "incumbent": false
       }
     },
     "first_percent": {
-      "Charles WANG": 100.0
+      "Charles WANG": 50.0,
+      "Lachlan STEENSON": 50.0
     },
     "primary_swing": {},
     "two_pp": {
-      "Charles WANG": 100.0
+      "Lachlan STEENSON": 100.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Charles WANG": 1
+        "Charles WANG": 1,
+        "Lachlan STEENSON": 1
+      },
+      {
+        "Marcus NG": 1,
+        "Lachlan STEENSON": 1
+      },
+      {
+        "Carlos YIN": 1,
+        "Lachlan STEENSON": 1
+      },
+      {
+        "Lachlan STEENSON": 2
       }
     ]
   },
   "TRANSIT CLUB LIAISON": {
-    "winner": "Carlos YIN",
+    "winner": "Lachlan STEENSON",
     "candidates": {
       "Carlos YIN": {
         "party": "NSRAP",
         "colour": "#FF13F0",
         "incumbent": false
+      },
+      "Lachlan STEENSON": {
+        "party": " The Greensons",
+        "colour": "#5BB450",
+        "incumbent": true
       }
     },
     "first_percent": {
-      "Carlos YIN": 100.0
+      "Carlos YIN": 50.0,
+      "Lachlan STEENSON": 50.0
     },
-    "primary_swing": {},
+    "primary_swing": {
+      "Lachlan STEENSON": 19.6
+    },
     "two_pp": {
-      "Carlos YIN": 100.0
+      "Lachlan STEENSON": 100.0
     },
-    "two_pp_swing": null,
+    "two_pp_swing": 43.0,
     "history": [
       {
-        "Carlos YIN": 1
+        "Carlos YIN": 1,
+        "Lachlan STEENSON": 1
+      },
+      {
+        "Charles WANG": 1,
+        "Lachlan STEENSON": 1
+      },
+      {
+        "Marcus NG": 1,
+        "Lachlan STEENSON": 1
+      },
+      {
+        "Lachlan STEENSON": 2
       }
     ]
   },
@@ -202,7 +302,7 @@
     "two_pp_swing": null,
     "history": [
       {
-        "Ian": 1
+        "Ian": 2
       }
     ]
   }
