@@ -5,7 +5,7 @@
       "Lachlan STEENSON": {
         "party": " The Greensons",
         "colour": "#5BB450",
-        "incumbent": false
+        "incumbent": true
       }
     },
     "first_percent": {
@@ -25,9 +25,9 @@
   "VICE PRESIDENT": {
     "winner": "Sylvia DUONG",
     "candidates": {
-      "Sylvia DUONG,": {
-        "party": "Independent",
-        "colour": "#555555",
+      "Sylvia DUONG": {
+        "party": " NSRAP",
+        "colour": "#FF13F0",
         "incumbent": false
       }
     },
@@ -36,7 +36,7 @@
     },
     "primary_swing": {},
     "two_pp": {
-      "Sylvia DUONG,": 100.0
+      "Sylvia DUONG": 100.0
     },
     "two_pp_swing": null,
     "history": [
@@ -51,7 +51,7 @@
       "Marcus NG": {
         "party": " NSRAP",
         "colour": "#FF13F0",
-        "incumbent": false
+        "incumbent": true
       }
     },
     "first_percent": {
@@ -74,7 +74,7 @@
       "Roy ZHANG": {
         "party": " NSRAP",
         "colour": "#FF13F0",
-        "incumbent": false
+        "incumbent": true
       }
     },
     "first_percent": {
