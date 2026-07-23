@@ -20,7 +20,7 @@
     "two_pp_swing": 22.0,
     "history": [
       {
-        "Lachlan STEENSON": 3
+        "Lachlan STEENSON": 4
       }
     ]
   },
@@ -39,21 +39,25 @@
       }
     },
     "first_percent": {
-      "Sylvia DUONG": 33.33,
-      "Charlie GREEN": 66.67
+      "Sylvia DUONG": 50.0,
+      "Charlie GREEN": 50.0
     },
     "primary_swing": {
-      "Charlie GREEN": 5.87
+      "Charlie GREEN": -10.8
     },
     "two_pp": {
-      "Sylvia DUONG": 33.33,
-      "Charlie GREEN": 66.67
+      "Charlie GREEN": 75.0,
+      "Charles WANG": 25.0
     },
-    "two_pp_swing": -16.33,
+    "two_pp_swing": -8.0,
     "history": [
       {
-        "Sylvia DUONG": 1,
+        "Sylvia DUONG": 2,
         "Charlie GREEN": 2
+      },
+      {
+        "Charlie GREEN": 3,
+        "Charles WANG": 1
       }
     ]
   },
@@ -72,21 +76,25 @@
       }
     },
     "first_percent": {
-      "Marcus NG": 33.33,
-      "Charlie GREEN": 66.67
+      "Marcus NG": 50.0,
+      "Charlie GREEN": 50.0
     },
     "primary_swing": {
-      "Marcus NG": 11.63
+      "Marcus NG": 28.3
     },
     "two_pp": {
-      "Marcus NG": 33.33,
-      "Charlie GREEN": 66.67
+      "Charlie GREEN": 75.0,
+      "Charles WANG": 25.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Marcus NG": 1,
+        "Marcus NG": 2,
         "Charlie GREEN": 2
+      },
+      {
+        "Charlie GREEN": 3,
+        "Charles WANG": 1
       }
     ]
   },
@@ -105,20 +113,20 @@
       }
     },
     "first_percent": {
-      "Roy ZHANG": 66.67,
-      "Marcus NG": 33.33
+      "Roy ZHANG": 75.0,
+      "Marcus NG": 25.0
     },
     "primary_swing": {
-      "Roy ZHANG": -3.33
+      "Roy ZHANG": 5.0
     },
     "two_pp": {
-      "Roy ZHANG": 66.67,
-      "Marcus NG": 33.33
+      "Roy ZHANG": 75.0,
+      "Marcus NG": 25.0
     },
-    "two_pp_swing": -13.33,
+    "two_pp_swing": -5.0,
     "history": [
       {
-        "Roy ZHANG": 2,
+        "Roy ZHANG": 3,
         "Marcus NG": 1
       }
     ]
@@ -142,7 +150,7 @@
     "two_pp_swing": null,
     "history": [
       {
-        "Sylvia DUONG": 3
+        "Sylvia DUONG": 4
       }
     ]
   },
@@ -166,25 +174,29 @@
       }
     },
     "first_percent": {
-      "Yiping PAN": 33.33,
-      "Sylvia DUONG": 33.33,
-      "Marcus NG": 33.33
+      "Yiping PAN": 50.0,
+      "Sylvia DUONG": 25.0,
+      "Marcus NG": 25.0
     },
     "primary_swing": {},
     "two_pp": {
-      "Marcus NG": 66.67,
-      "Sylvia DUONG": 33.33
+      "Marcus NG": 75.0,
+      "Charles WANG": 25.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Yiping PAN": 1,
+        "Yiping PAN": 2,
         "Sylvia DUONG": 1,
         "Marcus NG": 1
       },
       {
-        "Marcus NG": 2,
-        "Sylvia DUONG": 1
+        "Yiping PAN": 2,
+        "Marcus NG": 2
+      },
+      {
+        "Marcus NG": 3,
+        "Charles WANG": 1
       }
     ]
   },
@@ -203,19 +215,29 @@
       }
     },
     "first_percent": {
-      "Charles WANG": 33.33,
-      "Lachlan STEENSON": 66.67
+      "Charles WANG": 50.0,
+      "Lachlan STEENSON": 50.0
     },
     "primary_swing": {},
     "two_pp": {
-      "Charles WANG": 33.33,
-      "Lachlan STEENSON": 66.67
+      "Lachlan STEENSON": 100.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Charles WANG": 1,
+        "Charles WANG": 2,
         "Lachlan STEENSON": 2
+      },
+      {
+        "Marcus NG": 2,
+        "Lachlan STEENSON": 2
+      },
+      {
+        "Carlos YIN": 2,
+        "Lachlan STEENSON": 2
+      },
+      {
+        "Lachlan STEENSON": 4
       }
     ]
   },
@@ -234,21 +256,34 @@
       }
     },
     "first_percent": {
-      "Carlos YIN": 33.33,
-      "Lachlan STEENSON": 66.67
+      "Carlos YIN": 50.0,
+      "Lachlan STEENSON": 50.0
     },
     "primary_swing": {
-      "Lachlan STEENSON": 36.27
+      "Lachlan STEENSON": 19.6
     },
     "two_pp": {
-      "Carlos YIN": 33.33,
-      "Lachlan STEENSON": 66.67
+      "Lachlan STEENSON": 75.0,
+      "William CHUI": 25.0
     },
-    "two_pp_swing": 9.67,
+    "two_pp_swing": 18.0,
     "history": [
       {
-        "Carlos YIN": 1,
+        "Carlos YIN": 2,
         "Lachlan STEENSON": 2
+      },
+      {
+        "Charles WANG": 2,
+        "Lachlan STEENSON": 2
+      },
+      {
+        "Marcus NG": 1,
+        "Lachlan STEENSON": 2,
+        "William CHUI": 1
+      },
+      {
+        "Lachlan STEENSON": 3,
+        "William CHUI": 1
       }
     ]
   },
@@ -267,20 +302,20 @@
       }
     },
     "first_percent": {
-      "Ian": 66.67,
-      "Charlie GREEN": 33.33
+      "Ian": 75.0,
+      "Charlie GREEN": 25.0
     },
     "primary_swing": {
-      "Charlie GREEN": -27.57
+      "Charlie GREEN": -35.9
     },
     "two_pp": {
-      "Ian": 66.67,
-      "Charlie GREEN": 33.33
+      "Ian": 75.0,
+      "Charlie GREEN": 25.0
     },
     "two_pp_swing": null,
     "history": [
       {
-        "Ian": 2,
+        "Ian": 3,
         "Charlie GREEN": 1
       }
     ]
